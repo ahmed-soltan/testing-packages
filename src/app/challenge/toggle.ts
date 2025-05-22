@@ -15,15 +15,14 @@ interface RawResponseType {
 }
 
 export const fetchFeatureToggle = (rawApiResponse: any) => {
-  if(!Array.isArray(rawApiResponse)){
-    throw new Error("Response Must be an Array")
+  if (!Array.isArray(rawApiResponse)) {
+    throw new Error("Response Must be an Array");
   }
 
-  
   // first solution O(n^2)
   const getToggles = () => {
     const response: RawResponseType[] = [];
-    
+
     rawApiResponse.forEach((element: any) => {
       if (
         // we could create a utility function to validate inputs
@@ -39,10 +38,10 @@ export const fetchFeatureToggle = (rawApiResponse: any) => {
         response.push(element);
       }
     });
-    
+
     return response;
   };
-  
+
   //optimized solution O(n)
   const togglesMap = new Map<string, RawResponseType>();
   const getOptimizedToggles = () => {
@@ -71,7 +70,7 @@ export const fetchFeatureToggle = (rawApiResponse: any) => {
 
     return (
       toggles.find(
-        (element) => element.name.toLowerCase() === feature.toLowerCase()
+        element => element.name.toLowerCase() === feature.toLowerCase(),
       )?.enabled || false
     );
   };

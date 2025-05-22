@@ -8,8 +8,8 @@ const api = axios.create({
 
 // Axios interceptor to auto-refresh token
 api.interceptors.response.use(
-  (response) => response,
-  async (error) => {
+  response => response,
+  async error => {
     const originalRequest = error.config;
 
     if (
@@ -39,7 +39,7 @@ api.interceptors.response.use(
     }
 
     return Promise.reject(error);
-  }
+  },
 );
 
 export default api;

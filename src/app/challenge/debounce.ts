@@ -45,7 +45,7 @@ export const useDebounce = (value: string, delay?: number) => {
       setResult([]);
       try {
         const res = await fetch(
-          `https://dummyjson.com/products/search?q=${debouncedValue}`
+          `https://dummyjson.com/products/search?q=${debouncedValue}`,
         );
         const data = await res.json();
         setResult(data);

@@ -1,10 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useRef, useState } from "react";
 
 import {
   DropdownMenu,
@@ -37,7 +36,7 @@ export const Navbar = () => {
       gsap.fromTo(
         menuRef.current,
         { opacity: 0, y: -10, scale: 0.95 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "power2.out" }
+        { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "power2.out" },
       );
     }
   }, [open]);

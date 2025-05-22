@@ -1,9 +1,6 @@
 "use client";
+import { Star } from "lucide-react";
 import { useState } from "react";
-import { useDebounce } from "./challenge/debounce";
-import { Loader2, Star, StarsIcon } from "lucide-react";
-import ResultList from "./result-list";
-import { getDeepValue } from "@/lib/utils";
 import { Stars } from "stars-rating-sultan";
 
 export default function Home() {
@@ -17,12 +14,12 @@ export default function Home() {
   //   }
   // };
 
-
-
-
-
-
   const [rating, setRating] = useState(0);
+
+
+
+
+
 
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-center gap-5">
@@ -40,8 +37,8 @@ export default function Home() {
 
 
 
-
-      <Stars value={rating} onChange={setRating} 
+      <Stars value={rating} onChange={setRating}
+      
       count={3} icon={Star} />
     </div>
   );

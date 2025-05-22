@@ -1,4 +1,3 @@
-import React from "react";
 import { useCalculator } from "./store/use-calculator";
 
 const CalculatorHeader = () => {

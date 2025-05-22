@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "../ui/button";
 import { useCalculator } from "./store/use-calculator";
 
@@ -21,15 +20,13 @@ const CalculatorBody = () => {
           <Button
             variant={"destructive"}
             size={"lg"}
-            onClick={() => handleClick("DEL")}
-          >
+            onClick={() => handleClick("DEL")}>
             Log
           </Button>
           <Button
             variant={"secondary"}
             size={"lg"}
-            onClick={() => handleClick("AC")}
-          >
+            onClick={() => handleClick("AC")}>
             AC
           </Button>
         </div>
@@ -37,15 +34,13 @@ const CalculatorBody = () => {
           <Button
             variant={"secondary"}
             size={"lg"}
-            onClick={() => handleClick("+")}
-          >
+            onClick={() => handleClick("+")}>
             +
           </Button>
           <Button
             variant={"secondary"}
             size={"lg"}
-            onClick={() => handleClick("-")}
-          >
+            onClick={() => handleClick("-")}>
             -
           </Button>
         </div>
@@ -53,15 +48,13 @@ const CalculatorBody = () => {
           <Button
             variant={"secondary"}
             size={"lg"}
-            onClick={() => handleClick("*")}
-          >
+            onClick={() => handleClick("*")}>
             X
           </Button>
           <Button
             variant={"secondary"}
             size={"lg"}
-            onClick={() => handleClick("/")}
-          >
+            onClick={() => handleClick("/")}>
             /
           </Button>
         </div>
@@ -69,15 +62,13 @@ const CalculatorBody = () => {
           <Button
             variant={"secondary"}
             size={"lg"}
-            onClick={() => handleClick(".")}
-          >
+            onClick={() => handleClick(".")}>
             .
           </Button>
           <Button
             variant={"default"}
             size={"lg"}
-            onClick={() => handleClick("=")}
-          >
+            onClick={() => handleClick("=")}>
             =
           </Button>
         </div>
@@ -90,8 +81,7 @@ const CalculatorBody = () => {
                 key={colIndex}
                 variant={"outline"}
                 size={"lg"}
-                onClick={() => handleClick(num)}
-              >
+                onClick={() => handleClick(num)}>
                 {num}
               </Button>
             ))}
@@ -102,8 +92,7 @@ const CalculatorBody = () => {
             variant={"outline"}
             size={"lg"}
             className="w-full"
-            onClick={() => handleClick(0)}
-          >
+            onClick={() => handleClick(0)}>
             0
           </Button>
         </div>
@@ -113,15 +102,13 @@ const CalculatorBody = () => {
           <Button
             variant={"destructive"}
             size={"lg"}
-            onClick={() => handleClick("DEL")}
-          >
+            onClick={() => handleClick("DEL")}>
             DEL
           </Button>
           <Button
             variant={"secondary"}
             size={"lg"}
-            onClick={() => handleClick("AC")}
-          >
+            onClick={() => handleClick("AC")}>
             AC
           </Button>
         </div>
@@ -129,15 +116,13 @@ const CalculatorBody = () => {
           <Button
             variant={"secondary"}
             size={"lg"}
-            onClick={() => handleClick("+")}
-          >
+            onClick={() => handleClick("+")}>
             +
           </Button>
           <Button
             variant={"secondary"}
             size={"lg"}
-            onClick={() => handleClick("-")}
-          >
+            onClick={() => handleClick("-")}>
             -
           </Button>
         </div>
@@ -145,15 +130,13 @@ const CalculatorBody = () => {
           <Button
             variant={"secondary"}
             size={"lg"}
-            onClick={() => handleClick("*")}
-          >
+            onClick={() => handleClick("*")}>
             X
           </Button>
           <Button
             variant={"secondary"}
             size={"lg"}
-            onClick={() => handleClick("/")}
-          >
+            onClick={() => handleClick("/")}>
             /
           </Button>
         </div>
@@ -161,15 +144,13 @@ const CalculatorBody = () => {
           <Button
             variant={"secondary"}
             size={"lg"}
-            onClick={() => handleClick(".")}
-          >
+            onClick={() => handleClick(".")}>
             .
           </Button>
           <Button
             variant={"default"}
             size={"lg"}
-            onClick={() => handleClick("=")}
-          >
+            onClick={() => handleClick("=")}>
             =
           </Button>
         </div>

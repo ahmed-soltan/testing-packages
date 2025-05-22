@@ -1,6 +1,6 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
@@ -29,13 +29,13 @@ const VinylPlayerAnimation = ({
       .getElementById("def-1")
       ?.setAttribute(
         "d",
-        document?.getElementById("path-1")?.getAttribute("d")!
+        document?.getElementById("path-1")?.getAttribute("d")!,
       );
     document
       .getElementById("def-2")
       ?.setAttribute(
         "d",
-        document?.getElementById("path-2")?.getAttribute("d")!
+        document?.getElementById("path-2")?.getAttribute("d")!,
       );
   }, []);
 
@@ -62,7 +62,7 @@ const VinylPlayerAnimation = ({
         repeat: -1,
       });
     },
-    { scope: container }
+    { scope: container },
   );
   return (
     <div className="container" ref={container}>
@@ -71,8 +71,7 @@ const VinylPlayerAnimation = ({
         viewBox="0 0  350 350"
         width={"800px"}
         height={"600px"}
-        id="text-primary"
-      >
+        id="text-primary">
         <defs>
           <path className="def-1" />
         </defs>
@@ -86,8 +85,7 @@ const VinylPlayerAnimation = ({
               key={index}
               id={`Text${index + 1}`}
               xlinkHref="#def-1"
-              startOffset={"-25%"}
-            >
+              startOffset={"-25%"}>
               {text}
             </textPath>
           ))}
@@ -99,8 +97,7 @@ const VinylPlayerAnimation = ({
         viewBox="0 0  350 350"
         width={"800px"}
         height={"600px"}
-        id="text-secondary"
-      >
+        id="text-secondary">
         <defs>
           <path className="def-2" />
         </defs>

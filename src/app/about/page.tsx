@@ -1,13 +1,12 @@
 "use client";
 
-import Image from "next/image";
-import { useGetPhotos } from "./hooks/use-get-photos";
-import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
+import { useInView } from "react-intersection-observer";
+import { useGetPhotos } from "./hooks/use-get-photos";
 
 const AboutPage = () => {
   const { data, fetchNextPage, hasNextPage, isLoading } = useGetPhotos();
-  const { ref, inView } = useInView(); 
+  const { ref, inView } = useInView();
 
   const loadMore = () => {
     fetchNextPage();
@@ -19,7 +18,7 @@ const AboutPage = () => {
 
   return (
     <div className="flex items-center flex-wrap gap-5">
-      {data.pages.flat().map((comment) => (
+      {data.pages.flat().map(comment => (
         <div className="border rounded-md flex flex-col" key={comment.id}>
           <h1>{comment.name}</h1>
           <h3>{comment.email}</h3>
@@ -27,7 +26,11 @@ const AboutPage = () => {
         </div>
       ))}
 
-      {hasNextPage && <Button className="text-center" onClick={loadMore}>Load more</Button>}
+      {hasNextPage && (
+        <Button className="text-center" onClick={loadMore}>
+          Load more
+        </Button>
+      )}
     </div>
   );
 };

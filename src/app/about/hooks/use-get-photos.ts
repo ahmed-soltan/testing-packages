@@ -15,13 +15,13 @@ export const useGetPhotos = () => {
     queryKey: ["comments"],
     queryFn: async ({ pageParam = 1 }) => {
       const response = await fetch(
-        `https://jsonplaceholder.typicode.com/comments?_page=${pageParam}&_limit=${PAGE_SIZE}`
+        `https://jsonplaceholder.typicode.com/comments?_page=${pageParam}&_limit=${PAGE_SIZE}`,
       );
       return response.json();
     },
     initialPageParam: 1,
     getNextPageParam: (lastPage, allPages) => {
-      return lastPage.length ? allPages.length + 1 : undefined; 
+      return lastPage.length ? allPages.length + 1 : undefined;
     },
   });
 };

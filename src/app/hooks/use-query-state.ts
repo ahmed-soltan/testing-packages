@@ -2,7 +2,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useMemo } from "react";
 
 export const useQueryState = (
-  key: string
+  key: string,
 ): [string | null, (value: string | null) => void] => {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -23,7 +23,7 @@ export const useQueryState = (
 
       router.push(`?${params.toString()}`);
     },
-    [router, searchParams, key]
+    [router, searchParams, key],
   );
 
   return [value, setValue];

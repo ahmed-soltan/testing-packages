@@ -47,9 +47,9 @@ export const Stars = ({
     if (e.key === "Enter" || e.key === " ") {
       handleSetStars(index);
     } else if (e.key === "ArrowRight") {
-      setFocusedIndex((prev) => (prev === count - 1 ? 0 : (prev ?? value) + 1));
+      setFocusedIndex(prev => (prev === count - 1 ? 0 : (prev ?? value) + 1));
     } else if (e.key === "ArrowLeft") {
-      setFocusedIndex((prev) => (prev === 0 ? count - 1 : (prev ?? value) - 1));
+      setFocusedIndex(prev => (prev === 0 ? count - 1 : (prev ?? value) - 1));
     }
   };
 
@@ -61,10 +61,9 @@ export const Stars = ({
         "flex items-center",
         direction === "vertical" ? "flex-col" : "flex-row",
         disabled && "cursor-not-allowed",
-        className
+        className,
       )}
-      style={{ gap }}
-    >
+      style={{ gap }}>
       {Array.from({ length: count }).map((_, index) => {
         const isHovered = hovered >= index + 1;
         const isFilled = value >= index + 1;
@@ -81,14 +80,13 @@ export const Stars = ({
             onMouseLeave={() => !readonly && !disabled && setHovered(0)}
             onFocus={() => setFocusedIndex(index)}
             onBlur={() => setFocusedIndex(null)}
-            onKeyDown={(e) => handleKeyDown(e, index)}
+            onKeyDown={e => handleKeyDown(e, index)}
             onClick={() => handleSetStars(index)}
             className={cn(
               "cursor-pointer transition relative focus:outline-none",
               readonly && "pointer-events-none",
-              disabled && "cursor-not-allowed"
-            )}
-          >
+              disabled && "cursor-not-allowed",
+            )}>
             {tooltipLabels[index] && (
               <span
                 id={`tooltip-${index}`}
@@ -97,9 +95,8 @@ export const Stars = ({
                   "opacity-0 translate-y-2 scale-95 transition-all duration-300",
                   showTooltip &&
                     hovered === index + 1 &&
-                    "opacity-100 translate-y-[-40px] scale-100"
-                )}
-              >
+                    "opacity-100 translate-y-[-40px] scale-100",
+                )}>
                 {tooltipLabels[index]}
               </span>
             )}
@@ -111,8 +108,7 @@ export const Stars = ({
               viewBox="0 0 24 24"
               width={size}
               height={size}
-              fill={isHovered || isFilled ? activeColor : inactiveColor}
-            >
+              fill={isHovered || isFilled ? activeColor : inactiveColor}>
               <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
             </svg>
           </span>

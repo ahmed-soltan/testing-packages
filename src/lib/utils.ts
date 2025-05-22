@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export const getDeepValue = (
   obj: any,
   path: string[] | string,
-  defaultValue?: string
+  defaultValue?: string,
 ) => {
   if (typeof path === "string") path = path.split(".") as string[];
 
@@ -22,5 +22,3 @@ export const getDeepValue = (
   }
   return newObj;
 };
-
-

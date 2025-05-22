@@ -1,12 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { useQueryState } from "@/app/hooks/use-query-state";
+import { useState } from "react";
 
 export const SearchInput = () => {
   const [query, setQuery] = useQueryState("q");
   const [inputValue, setInputValue] = useState(query || "");
-
 
   const handleQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -14,7 +13,7 @@ export const SearchInput = () => {
 
   const submitToUrl = () => {
     const trimmed = inputValue.trim();
-    setQuery(trimmed || null); 
+    setQuery(trimmed || null);
   };
 
   return (
@@ -28,8 +27,7 @@ export const SearchInput = () => {
       />
       <button
         onClick={submitToUrl}
-        className="rounded-md p-2 border border-neutral-600"
-      >
+        className="rounded-md p-2 border border-neutral-600">
         Search
       </button>
     </div>
