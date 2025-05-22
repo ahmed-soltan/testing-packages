@@ -47,6 +47,7 @@
         "lint-staged": "^16.0.0",
         "postcss": "^8",
         "prettier": "^3.5.3",
+        "prettier-plugin-organize-imports": "^4.1.0",
         "tailwindcss": "^3.4.1",
         "typescript": "^5"
     },
@@ -58,7 +59,10 @@
     },
     "huskier": {
         "hooks": {
-            "pre-commit": []
+            "pre-commit": [
+                "prettier --write .",
+                "eslint . --fix"
+            ]
         },
         "parallel": true
     }
