@@ -16,11 +16,6 @@ export default function Home() {
 
   const [rating, setRating] = useState(0);
 
-
-
-
-
-
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-center gap-5">
       {/* <input
@@ -35,11 +30,7 @@ export default function Home() {
       <ResultList result={result} />
       {error && <p className="text-red-500">{error}</p>} */}
 
-
-
-      <Stars value={rating} onChange={setRating}
-      
-      count={3} icon={Star} />
+      <Stars value={rating} onChange={setRating} count={3} icon={Star} />
     </div>
   );
 }
