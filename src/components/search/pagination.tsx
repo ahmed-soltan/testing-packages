@@ -24,7 +24,8 @@ export const Pagination = ({ totalPages }: PaginationProps) => {
       <button
         onClick={() => handleSetPage(currentPage - 1)}
         disabled={currentPage <= 1}
-        className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50">
+        className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+      >
         Prev
       </button>
 
@@ -38,7 +39,8 @@ export const Pagination = ({ totalPages }: PaginationProps) => {
               pageNumber === currentPage
                 ? "bg-blue-500 text-white"
                 : "bg-gray-100"
-            }`}>
+            }`}
+          >
             {pageNumber}
           </button>
         );
@@ -47,7 +49,8 @@ export const Pagination = ({ totalPages }: PaginationProps) => {
       <button
         onClick={() => handleSetPage(currentPage + 1)}
         disabled={currentPage >= totalPages}
-        className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50">
+        className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+      >
         Next
       </button>
     </div>

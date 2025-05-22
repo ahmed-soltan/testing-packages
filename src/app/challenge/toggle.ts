@@ -70,7 +70,7 @@ export const fetchFeatureToggle = (rawApiResponse: any) => {
 
     return (
       toggles.find(
-        element => element.name.toLowerCase() === feature.toLowerCase(),
+        (element) => element.name.toLowerCase() === feature.toLowerCase(),
       )?.enabled || false
     );
   };

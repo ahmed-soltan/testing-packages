@@ -6,14 +6,14 @@ type TCalculator = {
   add: (btn: string | number) => void;
 };
 
-export const useCalculator = create<TCalculator>(set => ({
+export const useCalculator = create<TCalculator>((set) => ({
   result: 0,
   current: "",
-  add: btn => {
+  add: (btn) => {
     if (btn === "AC") {
       set(() => ({ current: "", result: 0 }));
     } else if (btn === "=") {
-      set(prev => {
+      set((prev) => {
         try {
           const evaluated = eval(prev.current);
           return { result: evaluated };
@@ -22,11 +22,11 @@ export const useCalculator = create<TCalculator>(set => ({
         }
       });
     } else if (btn === "DEL") {
-      set(prev => ({
+      set((prev) => ({
         current: prev.current.split("").slice(0, -1).join(""),
       }));
     } else {
-      set(prev => ({ current: prev.current + btn, result: prev.result }));
+      set((prev) => ({ current: prev.current + btn, result: prev.result }));
     }
   },
 }));

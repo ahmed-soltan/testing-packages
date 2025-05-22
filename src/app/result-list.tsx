@@ -17,11 +17,13 @@ export default function ResultList({ result }: { result: User[] }) {
     switch (e.key) {
       case "ArrowDown":
         e.preventDefault();
-        setFocusedIndex(prev => (prev + 1) % result.length);
+        setFocusedIndex((prev) => (prev + 1) % result.length);
         break;
       case "ArrowUp":
         e.preventDefault();
-        setFocusedIndex(prev => (prev - 1 < 0 ? result.length - 1 : prev - 1));
+        setFocusedIndex((prev) =>
+          prev - 1 < 0 ? result.length - 1 : prev - 1,
+        );
         break;
       case "Home":
         e.preventDefault();
@@ -52,18 +54,20 @@ export default function ResultList({ result }: { result: User[] }) {
       className="relative w-full max-w-[400px]"
       role="combobox"
       aria-expanded={open}
-      onKeyDown={handleKeyDown}>
+      onKeyDown={handleKeyDown}
+    >
       <div className="absolute top-0 z-50 w-full max-h-[300px] overflow-y-auto rounded-md border border-neutral-200 bg-white text-neutral-950 shadow-md outline-none animate-in fade-in-0 zoom-in-95">
         {result.map((user, index) => (
           <li
             key={user.id}
-            ref={el => (resultRefs.current[index] = el)}
+            ref={(el) => (resultRefs.current[index] = el)}
             role="option"
             aria-selected={index === focusedIndex}
             onMouseEnter={() => setFocusedIndex(index)}
             className={`relative flex flex-col gap-1 w-full cursor-default select-none items-start py-2.5 px-3 outline-none",
               ${index === focusedIndex && "bg-neutral-100 text-neutral-900"}
-            `}>
+            `}
+          >
             <span className="font-medium">{user.name}</span>
             <span className="text-sm text-neutral-500">{user.email}</span>
           </li>

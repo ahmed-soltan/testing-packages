@@ -33,7 +33,7 @@ const LoginForm = () => {
           type="email"
           value={email}
           required
-          onChange={e => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div>
@@ -43,12 +43,13 @@ const LoginForm = () => {
           type="password"
           value={password}
           required
-          onChange={e => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
       <button
         className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-        type="submit">
+        type="submit"
+      >
         Login
       </button>
       {message && <p className="mt-4 text-center text-sm">{message}</p>}

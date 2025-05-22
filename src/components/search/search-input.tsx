@@ -27,7 +27,8 @@ export const SearchInput = () => {
       />
       <button
         onClick={submitToUrl}
-        className="rounded-md p-2 border border-neutral-600">
+        className="rounded-md p-2 border border-neutral-600"
+      >
         Search
       </button>
     </div>

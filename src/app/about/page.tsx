@@ -18,7 +18,7 @@ const AboutPage = () => {
 
   return (
     <div className="flex items-center flex-wrap gap-5">
-      {data.pages.flat().map(comment => (
+      {data.pages.flat().map((comment) => (
         <div className="border rounded-md flex flex-col" key={comment.id}>
           <h1>{comment.name}</h1>
           <h3>{comment.email}</h3>

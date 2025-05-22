@@ -26,7 +26,7 @@ export default [
       "plugin:react/recommended",
       "plugin:@typescript-eslint/recommended",
       "plugin:prettier/recommended",
-      "prettier"
+      "prettier",
     ),
   ),
   {
@@ -71,6 +71,11 @@ export default [
 
       "react/react-in-jsx-scope": "off",
       "unused-imports/no-unused-imports": "error",
+    },
+    settings: {
+      react: {
+        version: "detect",
+      },
     },
   },
 ];
