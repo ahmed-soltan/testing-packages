@@ -62,7 +62,8 @@
   "huskier": {
     "hooks": {
       "pre-commit": [
-        "prettier --write ."
+        "prettier --write .",
+        "eslint src --fix"
       ]
     },
     "parallel": true
