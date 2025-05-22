@@ -17,6 +17,11 @@ export default function Home() {
   //   }
   // };
 
+
+
+
+
+
   const [rating, setRating] = useState(0);
 
   return (
@@ -32,7 +37,12 @@ export default function Home() {
       )}
       <ResultList result={result} />
       {error && <p className="text-red-500">{error}</p>} */}
-      <Stars value={rating} onChange={setRating} count={3} icon={Star} />
+
+
+
+
+      <Stars value={rating} onChange={setRating} 
+      count={3} icon={Star} />
     </div>
   );
 }
