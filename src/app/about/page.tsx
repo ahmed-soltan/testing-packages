@@ -1,12 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useInView } from "react-intersection-observer";
 import { useGetPhotos } from "./hooks/use-get-photos";
 
 const AboutPage = () => {
   const { data, fetchNextPage, hasNextPage, isLoading } = useGetPhotos();
-  
+
   const loadMore = () => {
     fetchNextPage();
   };
