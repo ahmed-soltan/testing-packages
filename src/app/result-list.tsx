@@ -60,7 +60,6 @@ export default function ResultList({ result }: { result: User[] }) {
         {result.map((user, index) => (
           <li
             key={user.id}
-            ref={(el) => (resultRefs.current[index] = el)}
             role="option"
             aria-selected={index === focusedIndex}
             onMouseEnter={() => setFocusedIndex(index)}

@@ -71,6 +71,7 @@ export default [
 
       "react/react-in-jsx-scope": "off",
       "unused-imports/no-unused-imports": "error",
+      "@typescript-eslint/no-require-imports": "off",
     },
     settings: {
       react: {

@@ -18,7 +18,7 @@ export const useCalculator = create<TCalculator>((set) => ({
           const evaluated = eval(prev.current);
           return { result: evaluated };
         } catch (error) {
-          return { current: "Error", result: 0 };
+          return { current: "Error", result: 0 , error };
         }
       });
     } else if (btn === "DEL") {

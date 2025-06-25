@@ -1,4 +1,6 @@
 "use client";
+import { MyDropzone } from "@/components/file-uploader/uploader";
+import { Editor } from "@/components/rich-text-editor/editor";
 import { Star } from "lucide-react";
 import { useState } from "react";
 import { Stars } from "stars-rating-sultan";
@@ -30,7 +32,9 @@ export default function Home() {
       <ResultList result={result} />
       {error && <p className="text-red-500">{error}</p>} */}
 
-      <Stars value={rating} onChange={setRating} count={3} icon={Star} />
+      <Stars value={rating} onChange={setRating} count={5} icon={Star} />
+      <Editor />
+      <MyDropzone />
     </div>
   );
 }

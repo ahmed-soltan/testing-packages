@@ -8,7 +8,7 @@ const RegisterForm = () => {
   const [password, setPassword] = useState("");
 
   // the e type of the e
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log({ email, password });
   };

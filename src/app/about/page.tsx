@@ -6,8 +6,7 @@ import { useGetPhotos } from "./hooks/use-get-photos";
 
 const AboutPage = () => {
   const { data, fetchNextPage, hasNextPage, isLoading } = useGetPhotos();
-  const { ref, inView } = useInView();
-
+  
   const loadMore = () => {
     fetchNextPage();
   };
